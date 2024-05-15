@@ -9,7 +9,7 @@ import openai # Imports the openai module, which is used to interact with the Op
 app = Flask(__name__) # This line creates a Flask application instance called app.
 
 # Set your OpenAI API key
-openai.api_key = "Open API Key"
+openai.api_key = "OpenAPI Key"
 
 @app.route("/") # Defines a route for the root URL ("/") of the web application. When a user accesses the root URL, the index() function will be called.
 def index(): # Renders the index.html template and returns it as the response to the client.
@@ -56,7 +56,7 @@ def generate_quiz():
     
     # Put value in combined text with text input
     if text_input and is_meaningful_text(text_input):
-        combined_text += "\n" + text_input
+        combined_text += "\n\n" + text_input
 
     for file in files:
         if not file.filename.lower().endswith(allowed_extensions):

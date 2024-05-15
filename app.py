@@ -5,16 +5,11 @@ and jsonify to convert Python dictionaries to JSON format for responses.'''
 from PyPDF2 import PdfReader # Imports the PdfReader class from the PyPDF2 library, which is used to read PDF files.
 from docx import Document # Imports the Document class from the docx library, which is used to read Microsoft Word (.docx) files.
 import openai # Imports the openai module, which is used to interact with the OpenAI API.
-import logging
 
 app = Flask(__name__) # This line creates a Flask application instance called app.
 
 # Set your OpenAI API key
 openai.api_key = "Open API Key"
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 @app.route("/") # Defines a route for the root URL ("/") of the web application. When a user accesses the root URL, the index() function will be called.
 def index(): # Renders the index.html template and returns it as the response to the client.
@@ -88,10 +83,6 @@ def generate_quiz():
 
         if is_meaningful_text(text):
             combined_text += "\n" + text
-
-
-    # Log the combined text for debugging
-    logger.info("Combined Text: %s", combined_text)
 
     # Check if combined_text is meaningful
     if not is_meaningful_text(combined_text):

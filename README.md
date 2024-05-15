@@ -1,6 +1,6 @@
 # EASE EXAM
 <p align="center">
-   <img src = "https://cdn.discordapp.com/attachments/885103849831030785/1232910498551304273/exam.png?ex=662b2ce1&is=6629db61&hm=095712286b6c2eaad8e77694c07b4f99555bc12add159ca41c84349d33d38db3&">
+   <img src = "https://cdn.discordapp.com/attachments/885103849831030785/1232910498551304273/exam.png?ex=66458ae1&is=66443961&hm=c405e906ef854a06e84619fef565394b44050a3cb1ff3a27bb0c029c11ecbc22&">
 </p>
 
 <p style = "text-align: justify;"> EaseExam is a platform designed to simplify the creation of exam questions from lecture materials. It allows professors to upload files to generate questions based on key concepts and information. The platform also incorporates artificial intelligence technology, allowing users to interact with the system This allows professors to focus on teaching and facilitating learning experiences for their students, revolutionizing exam preparation.
@@ -17,39 +17,31 @@ Link: [bit.ly/EaseExam](bit.ly/EaseExam)
 
 ### Home Section
 
-![image](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/a6ecce4a-351f-43f1-9ec5-c593367bd4a1)
+![image](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/3305ff32-bae2-47a1-9ad2-9c220b6f9dd4)
+
 
 
 ### Generator Section
 
-![image](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/b7531360-91c7-46d9-8ed5-9cb229851d19)
+![image](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/083f473a-f26c-471c-9d79-fe18a4e4f1b3)
+
 
 ### About Us Section
 
-![image](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/93f43883-c229-4e51-bae3-dad44bbebd3d)
+![image](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/758cfe1f-c0a3-4f57-b631-39c4d0d00c7d)
+
 
 
 <br>
 
 ## HOW TO USE EASE EXAM
 
-![1](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/4a99a381-253f-4a37-8365-58d34448dc8b)
-
-
-![2](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/1d0b0f1f-5ef8-49e1-b7dc-46ceb4b45d58)
-
-<br>
-
-## MOBILE VIEW
-
-<p align="center">
-   <img src = "https://cdn.discordapp.com/attachments/885103849831030785/1232933352181596223/image.png?ex=662b4229&is=6629f0a9&hm=63c822b06df44fb7b4ffbad339c18392d82cac52b30dc9a4304dbd927566e581&">
-   <img src = "https://cdn.discordapp.com/attachments/885103849831030785/1232933364668043275/image.png?ex=662b422c&is=6629f0ac&hm=ea0fbfef300fe832c128758be957dfd497e9c1274ff3f32860dd0b99951f8681&">
-   <img src = "https://cdn.discordapp.com/attachments/885103849831030785/1232933378215379066/image.png?ex=662b4230&is=6629f0b0&hm=32c39eb53a1a17febc2901d9cafb01780d3751f0d42044c3c79eba427faed586&">
-</p>
+![Copy of Blue Creative Employee Training Presentation](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/e46095a0-97bf-4539-8614-e754e0c2ee14)
+![Copy of Blue Creative Employee Training Presentation (1)](https://github.com/AeronRedCelajes/EaseExamGen/assets/142378544/7a09facf-84eb-487c-ba3f-d96d7e4b7824)
 
 
 <br>
+
 
 ## COLLABORATORS
 

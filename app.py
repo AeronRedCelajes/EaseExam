@@ -57,7 +57,7 @@ def generate_quiz():
     app.logger.info("Total tokens in input: %d", total_tokens)
 
     # Check if the total number of tokens exceeds the maximum limit
-    if total_tokens > 16385:
+    if total_tokens >= 16385:
         return jsonify({"error": f"You have exceeded the maximum token limit of 16385 with {total_tokens} tokens. Please reduce the amount of text or the number of files."})
 
 

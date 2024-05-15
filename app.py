@@ -54,6 +54,7 @@ def generate_quiz():
     # Checker if the extensions are valid
     combined_text = ""
     
+    # Put value in combined text with text input
     if text_input and is_meaningful_text(text_input):
         combined_text += "\n" + text_input
 
@@ -65,16 +66,19 @@ def generate_quiz():
             text = "\n".join(generate_questions_from_pdf(file))
         elif file.filename.endswith(".docx"):
             text = "\n".join(generate_questions_from_docx(file))
-
+        
         if is_meaningful_text(text):
             combined_text += "\n\n" + text
 
-    # Check if combined_text is empty
+        if not combined_text:
+            combined_text += text
+
+    # Check if combined_text and text is empty
     if not combined_text and not text_input:
         return jsonify({"error": "Please input content."})
     
-    # Check if combined_text is meaningful
-    if not is_meaningful_text(combined_text):
+    # Check if combined_text and text is meaningful
+    if not is_meaningful_text(combined_text) and not is_meaningful_text(text_input):
         return jsonify({"error": "Please input meaningful text."})
 
     # Print the combined text to the console

@@ -1,0 +1,817 @@
+*
+{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: auto;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    background-image: linear-gradient(rgb(11, 95, 134), rgb(0, 179, 134));
+  }
+
+.home
+{
+    height: 100vh;
+    /* changes */
+    margin-top: -14%;
+}
+
+.navbar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 10px;
+    padding-right: 70px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a
+{
+    text-decoration: none;
+}
+
+/*Pages (Home, Generator, About Us)*/
+.page
+{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page li
+{
+    font-family: 'Montserrat';
+    margin-left: 20px;
+}
+
+.page a
+{
+    color: white;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 100px;
+}
+
+/*line effect*/
+.page a::before
+{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2%;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.page a:hover::before
+{
+    width: 100%;
+}
+
+.logo
+{
+    margin-left: 20px;
+}
+
+.logo-img
+{
+    width: 50px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: -34px;
+}
+
+.logo-text
+{
+    color: white;
+    font-family: 'Oswald';
+    font-size: 50px;
+    font-weight: 800;
+}
+
+/*HOME PAGE*/
+.content
+{
+    width: 75%;
+    margin: 200px auto 0;
+    overflow: hidden;
+    padding-top: 200px;
+
+}
+
+.right-image
+{
+    width: 40%;
+    margin-left: 100px;
+    float: right;
+}
+
+.content h1
+{
+    font-size: 80px;
+    font-family: 'Oswald';
+    margin-bottom: 0;
+}
+
+.content p
+{
+    margin-top: 0;
+    padding-right: 50px;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    text-align: justify;
+}
+
+/*GENERATOR PAGE*/
+.btn-selected {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+}
+
+#loading-spinner {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bt-copy {
+    display: none;
+}
+.generator
+{
+    height: 100vh;
+    /* Changes below */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Made Changes - noy */
+.content-area
+{
+    margin-top: 20%;
+    position: absolute;
+}
+
+.content-area textarea
+{
+    border-radius: 10px;
+    border: 1px solid #999999;
+    outline: none;
+    resize: none;
+    font-family: 'Roboto';
+}
+
+/*button effect*/
+.content-area button:hover
+{
+    background-color: rgb(3, 117, 121);
+    border-color:  rgb(3, 117, 121);
+}
+
+.text-area-div
+{
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 45px;
+    width: 1200px;
+    height: 318px;
+}
+
+.text-area-div textarea
+{
+    width: 100%;
+    height: 97%;
+}
+
+.bt-clear
+{
+    color: #ffffff;
+    background-color: rgb(2, 156, 161);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 268px;
+    right: 7px;
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+
+.choose-file-div
+{
+    margin-top: 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 380px; /* Adjust here */
+    height: 55px;
+}
+
+.custom-file-input
+{
+    width: 245px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.custom-file-label
+{
+    top: 331px;
+    left: 10px;
+    right: 875px;
+    width: 245px; /* Adjust here */
+    overflow: hidden;
+}
+
+.bt-choose
+{
+    color: #ffffff;
+    background-color: rgb(2, 156, 161);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 328px;
+    right: 755px;
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+
+.bt-remove
+{
+    color: #ffffff;
+    background-color: rgb(2, 156, 161);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 328px;
+    right: 827px;
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+
+.num-questions-div
+{
+    position: absolute;
+    top: 318px;
+    right: 168px;
+    margin-top: 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 645px; /* Adjust here */
+    height: 55px;
+    float: right;
+}
+
+.num-questions
+{
+    width: 95px; /* Adjust here */
+    height: 40px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+
+.bt-multiple
+{
+    color: #ffffff;
+    background-color: rgb(2, 156, 161);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 3px;
+    right: 392px;
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+
+.bt-tf
+{
+    color: #ffffff;
+    background-color: rgb(2, 156, 161);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 3px;
+    right: 272px;
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+
+.bt-fill-blanks
+{
+    color: #ffffff;
+    background-color: rgb(2, 156, 161);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 3px;
+    right: 129px;
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+
+.bt-identification
+{
+    color: #ffffff;
+    background-color: rgb(2, 156, 161);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+
+.bt-generate
+{
+    color: #ffffff;
+    background-color: rgb(0, 170, 0);
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 20px;
+    position: absolute;
+    top: 323px;
+    right: 0px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 170, 0);
+}
+
+.content-area h1
+{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Calibri';
+    font-weight: 900;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+.error-message {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.output-div
+{
+    margin-top: -5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 45px;
+    width: 1200px;
+    height: 400px;
+    color: #000000;
+    overflow-y: auto; /* Add this line to add a vertical scrollbar if the content exceeds the height */
+    overflow-x: auto;
+}
+
+.bt-copy {
+    color: #ffffff;
+    background-color: rgb(0, 170, 0);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 170, 0);
+    margin-bottom: 10px;
+}
+
+.output
+{
+    width: 100%;
+    height: 111%;
+}
+
+/*ABOUT US PAGE*/
+.about
+{
+    height: 100vh;
+    background-position: fixed;
+}
+
+.about h1
+{
+    padding-top: 80px;
+    margin-top: 300px;
+    margin-bottom: -10px;
+    font-size: 70px;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+.container-about h2
+{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Oswald';
+}
+
+.container-about p
+{
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 20px;
+    font-family: 'Calibri';
+    font-size: 20px;
+}
+
+.container-about
+{
+    background-image: url(img/light\ green.png);
+    background-size: cover;
+    background-position:  0 15px;
+    background-repeat: no-repeat;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.container-pic
+{
+    background-image: url(img/water.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 54vh;
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 300px;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.person img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.person p {
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.person p1
+{
+    font-size: 20px;
+    font-family: 'Oswald';
+}
+
+footer
+{
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Roboto';
+}
+
+@media screen and (max-width: 1200px) {
+    .navbar
+    {
+        padding: 5px;
+    }
+
+    .logo-text
+    {
+        font-size: 20px;
+    }
+
+    .logo-img
+    {
+        margin-left: -15px;
+        width: 22px;
+        height: auto;
+        border-radius: 4px;
+        margin-top: -8px;
+    }
+
+    .page li
+    {
+        margin-right: 10px;
+    }
+
+    .page a
+    {
+        font-size: 10px;
+        margin-left: -10px;
+    }
+
+    /* home */
+    .home
+    {
+        height: 72vh;
+        margin-top: -90%;
+        text-align: center;
+    }
+
+    .right-image
+    {
+        display: none;
+    }
+
+    .content h1
+    {
+        font-size: 45px;
+    }
+
+    .content p
+    {
+        font-size: 12px;
+        padding-right: 0%;
+    }
+
+    /* generator */
+
+    .generator
+    {
+        height: 125vh;
+        margin-top: -20px;
+    }
+
+    .content-area
+    {
+        width: 90%;
+        margin-top: 250px;
+        padding: 10px;
+    }
+
+    .text-area-div,
+    .choose-file-div,
+    .num-questions-div,
+    .container-pic,
+    .output-div
+    {
+        width: 112%;
+        margin-left: -20px;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    .text-area-div textarea
+    {
+        height: 88%;
+    }
+
+    .bt-clear
+    {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 12px;
+        top: 291px;
+        right: 0px;
+    }
+
+    .choose-file-div
+    {
+        height: 45px;
+    }
+
+    .custom-file-input
+    {
+        right: 150px;
+    }
+
+    .custom-file-label
+    {
+        top: 340px;
+        left: 0px;
+        right: 100px;
+    }
+
+    .bt-remove
+    {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 12px;
+        top: 340px;
+        right: 0px;
+    }
+
+    .num-questions-div
+    {
+        top: 372px;
+        left: 5px;
+        width: 315px;
+        height: 55px;
+        background-color: transparent;
+        border: none;
+    }
+
+    .num-questions
+    {
+        width: 125px;
+        height: 40px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .bt-multiple
+    {
+        background-color: rgb(2, 156, 161);
+        border: 1px solid rgb(2, 156, 161);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 12px;
+        top: 5px;
+        right: 59px;
+    }
+
+    .bt-tf
+    {
+        background-color: rgb(2, 156, 161);
+        border: 1px solid rgb(2, 156, 161);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 12px;
+        top: 5px;
+        right: -45px;
+    }
+
+    .bt-fill-blanks
+    {
+        background-color: rgb(2, 156, 161);
+        border: 1px solid rgb(2, 156, 161);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 12px;
+        top: 5px;
+        right: -168px;
+    }
+
+    .bt-identification
+    {
+        background-color: rgb(2, 156, 161);
+        border: 1px solid rgb(2, 156, 161);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 12px;
+        top: 5px;
+        right: -275px;
+    }
+
+    .bt-generate
+    {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 15px;
+        top: 430px;
+        right: 105px;
+
+    }
+
+    .content-area h1
+    {
+        margin-top: 100px;
+    }
+
+    #loading-spinner {
+        display: none;
+        text-align: center;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* about us */
+
+    .about h1
+    {
+        padding-top: 55px;
+        font-size: 40px;
+    }
+
+    .container-about h2
+    {
+        font-size: 25px;
+    }
+
+    .container-about p
+    {
+        font-size: 13px;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: justify;
+    }
+
+    .container-pic
+    {
+        background-size: cover;
+        height: 32vh;
+        margin-left: -45px;
+        padding-left: 40px;
+        padding-right: 10px;
+    }
+
+    .person img
+    {
+        width: 70px;
+        height: 70px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .person p
+    {
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .person p1
+    {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+
+    footer
+    {
+        margin-top: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 10px;
+    }
+}

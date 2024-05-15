@@ -1,0 +1,5 @@
+A black hole is a region in space where gravity is so strong that nothing, not even light, can escape from it. They are formed when massive stars collapse at the end of their life cycle. Black holes come in different sizes, with stellar black holes being a few times larger than the Sun, and supermassive black holes found at the centers of most galaxies, including our Milky Way, being millions or even billions of times more massive than the Sun.
+
+The boundary around a black hole where the escape velocity equals the speed of light is called the event horizon. Once anything crosses this boundary, it is pulled into the black hole and cannot escape. Despite their name, black holes are not empty but contain a huge amount of mass packed into a very small space, creating a gravitational pull that distorts spacetime around them.
+
+Black holes are fascinating objects in astrophysics and play a crucial role in our understanding of the universe's evolution and behavior.

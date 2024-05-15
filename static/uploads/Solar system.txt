@@ -1,0 +1,18 @@
+Mercury: The closest planet to the Sun, Mercury is small and rocky with a surface covered in craters. It
+has a thin atmosphere and extreme temperature variations.
+Venus: Similar in size and composition to Earth, Venus has a thick, toxic atmosphere that traps heat,
+making it the hottest planet in our solar system. It also rotates backwards compared to other planets.
+Earth: The third planet from the Sun, Earth is the only known planet to support life. It has a diverse range
+of environments, including oceans, continents, and a breathable atmosphere.
+Mars: Often called the "Red Planet" due to its rusty color, Mars is a rocky planet with polar ice caps,
+canyons, and extinct volcanoes. It has a thin atmosphere and may have once had liquid water on its
+surface.
+Jupiter: The largest planet in our solar system, Jupiter is a gas giant with a thick atmosphere and many
+moons. It is known for its Great Red Spot, a giant storm that has been raging for centuries.
+Saturn: Known for its beautiful rings, Saturn is a gas giant similar to Jupiter but with a less dense
+atmosphere. It has many moons, including Titan, which has a thick atmosphere and lakes of liquid
+methane.
+Uranus: Uranus is an ice giant with a bluish-green color due to methane in its atmosphere. It rotates on
+its side, possibly due to a collision with a large object early in its history.
+Neptune: The farthest planet from the Sun, Neptune is an ice giant with a deep blue color. It has strong
+winds and the fastest winds recorded in the solar system.

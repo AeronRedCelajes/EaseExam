@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EaseExam Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="static/img/exam.png">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Flex' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a class="logo" href="#">
+            <img src="static/img/exam.png" alt="logo" class="logo-img">
+            <span class="logo-text">EaseExam</span>
+        </a>
+
+        <ul class="page">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#generator">Generator</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </div>
+
+    <section class="home">
+        <a name="home"></a>
+            <div class="content">
+                <img src="static/img/icon.png" alt="image" class="right-image">
+                <h1>EaseExam</h1>
+                    <p>EaseExam is a platform designed to simplify the creation of exam questions from lecture materials.
+                    It allows professors to upload files to generate questions based on key concepts and information.
+                    The platform also incorporates artificial intelligence technology, allowing users to interact with
+                    the system This allows professors to focus on teaching and facilitating learning experiences for their
+                    students, revolutionizing exam preparation.</p>
+            </div>
+    </section>
+
+    <a name="generator"></a>
+    <section class="generator">
+
+        <div class="content-area">
+            <div class="text-area-div">
+                <textarea class="text-area" id="text-input" type = "text" placeholder="Enter the text with all the information needed for the quiz or exam!"></textarea>
+                <button type="button" class="bt-clear" id="clear-text-btn" onclick="clearText()">Clear Text</button>
+            </div>
+
+            <div class="choose-file-div">
+                <input type="file" class="custom-file-input" id="file-input" multiple accept=".pdf,.docx">
+                <label class="custom-file-label" for="file-input">Choose file...</label>
+                <button type="button" class="bt-remove" id="remove-files-btn" onclick="removeFiles()">Remove File</button>
+            </div>
+
+            <div class="num-questions-div">
+                <input type="number" class="num-questions" id="questions-content" min="1" max="10" value="5" placeholder="Number of Questions (1-10)"></textarea>
+                <button type="button" class="bt-multiple" id="multiple-choice-btn" onclick="selectQuizType('Multiple Choice')">Multiple Choices</button>
+                <button type="button" class="bt-tf" id="true-false-btn" onclick="selectQuizType('True or False')">True or False</button>
+                <button type="button" class="bt-fill-blanks" id="fill-blanks-btn" onclick="selectQuizType('Fill in the Blanks')">Fill in the Blanks</button>
+                <button type="button" class="bt-identification" id="identification-btn" onclick="selectQuizType('Identification')">Identification</button>
+            </div>
+
+            <button type="button" class="bt-generate" id="generate-quiz-btn">Generate!</button>
+
+            <div id="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i> Loading...
+            </div>
+
+            <h1>OUTPUT</h1>
+            <div class="output-div">
+                <div class="output" id="output" placeholder="Output Here!" disabled></div>
+            </div>
+            <br>
+            <button class="bt-copy" onclick="copyToClipboard()">Copy Questions</button>
+        </div>
+    </section>
+
+    <section class="about">
+        <a name = "about"></a>
+        <h1>WE ARE ACIM</h1>
+        <div class="container-about">
+            <h2>About Us</h2>
+            <p>New Era University's tech team consists of Noriel Achero, a versatile front end and back-end developer, Aeron
+                Red Celajes, a master of back-end development, Samantha Pauline Ines, a creative Ul designer, and Angelica
+                Mae Manliguez, a front-end developer. Noriel bridges the gap between user interface design and server-side
+                functionality, while Aeron focuses on building robust and scalable systems. Samantha's artistic flair and
+                technical acumen create visually stunning interfaces, while Angelica's proficiency in HTML, CSS, and JavaScript
+                transforms design concepts into interactive web experiences. Together, they form a powerful team that drives
+                digital transformation and pushes the boundaries of web development.</p>
+        </div>
+
+        <div class="container-pic">
+            <div class="person">
+                <img src="static/img/noy.png" alt="noy">
+                <p>Noriel Achero</p>
+                <p1>Front-end & Back-end Developer</p1>
+            </div>
+            <div class="person">
+                <img src="static/img/red.png" alt="noy">
+                <p>Aeron Red Celajes</p>
+                <p1>Back-end Developer</p1>
+            </div>
+            <div class="person">
+                <img src="static/img/sam.png" alt="noy">
+                <p>Samantha Ines</p>
+                <p1>UI Designer & Front-end Developer</p1>
+            </div>
+            <div class="person">
+                <img src="static/img/angelica.png" alt="noy">
+                <p>Angelica Mae Manliguez</p>
+                <p1>Front-end Developer</p1>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        3-BSCS-2 | ACIM | &copy; 2024
+    </footer>
+
+<script>
+    document.getElementById('file-input').addEventListener('change', function (e) {
+        var fileNames = [];
+        for (var i = 0; i < this.files.length; i++) {
+            fileNames.push(this.files[i].name);
+        }
+        document.querySelector('.custom-file-label').textContent = fileNames.join(', ');
+        document.getElementById('remove-files-btn').style.display = 'block'; // Show the remove files button
+    });
+
+    function copyToClipboard() {
+        /* Get the text content of the output div with line breaks */
+        const textToCopy = Array.from(document.querySelectorAll('.output .question'))
+            .map((question, index) => `${question.textContent.trim().replace('Answer:', 'Answer:')}`)
+            .join('\n');
+
+        /* Create a temporary textarea element to hold the text */
+        const textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+
+        /* Append the textarea to the body and select its contents */
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        /* Copy the selected text to the clipboard */
+        document.execCommand('copy');
+
+        /* Remove the temporary textarea */
+        document.body.removeChild(textarea);
+
+        /* Alert the user that the text has been copied */
+        alert('Questions copied to clipboard!');
+    }
+
+
+    function removeFiles() {
+    const fileInput = document.querySelector("#file-input");
+        if (fileInput.files.length === 0) {
+            alert("No file/s imported.");
+            return;
+        }
+        fileInput.value = ""; // Clear the file input
+        document.querySelector('.custom-file-label').textContent = "Choose file..."; // Reset the file input label
+        document.getElementById('remove-files-btn').style.display = 'none'; // Hide the remove files button
+    }
+
+
+    function clearText() {
+        document.querySelector("#text-input").value = ""; // Clear the text input
+    }
+
+    function selectQuizType(quizType) {
+        // Remove the class from all buttons
+        document.getElementById('multiple-choice-btn').classList.remove('btn-selected');
+        document.getElementById('true-false-btn').classList.remove('btn-selected');
+        document.getElementById('fill-blanks-btn').classList.remove('btn-selected'); 
+        document.getElementById('identification-btn').classList.remove('btn-selected'); // Add more for new buttons
+
+        // Add the class to the selected button
+        if (quizType === 'Multiple Choice') {
+            document.getElementById('multiple-choice-btn').classList.add('btn-selected');
+        } else if (quizType === 'True or False') {
+            document.getElementById('true-false-btn').classList.add('btn-selected');
+        } else if (quizType === 'Fill in the Blanks') {
+            document.getElementById('fill-blanks-btn').classList.add('btn-selected');
+        } else if (quizType === 'Identification') {
+            document.getElementById('identification-btn').classList.add('btn-selected');
+        }
+        
+
+        document.getElementById('generate-quiz-btn').style.display = 'block';
+        document.getElementById('generate-quiz-btn').setAttribute('data-quiz-type', quizType);
+    }
+
+    let isGenerating = false; // Flag to track if a question is being generated
+
+    function isMeaningfulText(text) {
+        // Check if the text contains only non-alphanumeric characters
+        return /[a-zA-Z0-9]/.test(text);
+    }
+
+    function generateQuiz() {
+        if (isGenerating) {
+            alert("Please wait 5 seconds before generating another question.");
+            return;
+        }
+
+        const quizType = document.getElementById('generate-quiz-btn').getAttribute('data-quiz-type');
+
+        // Check if quizType is not set
+        if (!quizType) {
+            alert("Please select a quiz type (Multiple Choice, True or False, or Fill in the Blanks) before generating.");
+            return;
+        }
+
+        // Check if the file format is allowed
+        const fileInput = document.getElementById('file-input');
+        const allowedFormats = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        for (let i = 0; i < fileInput.files.length; i++) {
+            if (!allowedFormats.includes(fileInput.files[i].type)) {
+                alert("Only .pdf and .docx file formats are allowed.");
+                return;
+            }
+        }
+
+        // Show the loading spinner
+        document.getElementById('loading-spinner').style.display = 'block';
+
+        // Set the flag to true
+        isGenerating = true;
+
+        const textInput = document.querySelector("#text-input");
+        const outputDiv = document.querySelector("#output");
+        const numQuestions = document.getElementById('questions-content').value; // Get the number of questions in here
+
+        // Validate the number of questions
+        if (numQuestions < 1 || numQuestions > 10) {
+            alert("Number of questions must be between 1 and 10.");
+            isGenerating = false; // Reset the flag
+            document.getElementById('loading-spinner').style.display = 'none'; // Hide the loading spinner
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("text", textInput.value);
+        formData.append("quiz_type", quizType);
+        formData.append("num_questions", numQuestions); // Pass the number of questions to the API request
+        for (let i = 0; i < fileInput.files.length; i++) {
+            formData.append("files[]", fileInput.files[i]);
+        }
+
+        fetch("/api/generate_quiz", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Hide the loading spinner here
+            document.getElementById('loading-spinner').style.display = 'none';
+
+            // Check if the API response contains questions_with_answers
+            if (data.questions_with_answers) {
+                // Clear previous output
+                outputDiv.innerHTML = "";
+
+                // Split the questions_with_answers into an array of questions
+                const questionsWithAnswers = data.questions_with_answers.split("\n");
+
+                // Create a div to hold the questions
+                const questionsDiv = document.createElement("div");
+
+                // Add each question to the div
+                questionsWithAnswers.forEach(question => {
+                    const questionDiv = document.createElement("div");
+                    questionDiv.classList.add("question");
+                    questionDiv.innerHTML = question + "<br>"; // Add a break line after each question and answer pair
+                    questionsDiv.appendChild(questionDiv);
+                });
+
+                // Append the questions to the outputDiv
+                outputDiv.appendChild(questionsDiv);
+
+                // Show the copy button
+                document.querySelector('.bt-copy').style.display = 'block';
+            } else if (data.error) {
+                // Clear previous output if there is an error
+                outputDiv.innerHTML = "";
+
+                // Show error message
+                const errorDiv = document.createElement("div");
+                errorDiv.classList.add("message", "error-message");
+                errorDiv.textContent = data.error;
+                outputDiv.appendChild(errorDiv);
+
+                // Hide the copy button
+                document.querySelector('.bt-copy').style.display = 'none';
+            }
+
+            // Reset the flag
+            isGenerating = false;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("An error occurred while generating questions. Please try again.");
+            // Reset the flag
+            isGenerating = false;
+            // Hide the loading spinner
+            document.getElementById('loading-spinner').style.display = 'none';
+        });
+    }
+
+    document.getElementById('generate-quiz-btn').addEventListener('click', generateQuiz);
+</script>
+
+</body>
+</html>

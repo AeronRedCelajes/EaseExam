@@ -48,19 +48,6 @@ def generate_quiz():
 
     num_questions = int(num_questions) # Converts num_questions to an integer.
 
-    # Calculate the total number of tokens in the input text and files
-    total_tokens = len(text_input.split()) if text_input else 0
-    for file in request.files.getlist("files[]"):
-        total_tokens += len(file.read().split())
-
-    # Log the total number of tokens
-    app.logger.info("Total tokens in input: %d", total_tokens)
-
-    # Check if the total number of tokens exceeds the maximum limit
-    if total_tokens >= 16385:
-        return jsonify({"error": f"You have exceeded the maximum token limit of 16385 with {total_tokens} tokens. Please reduce the amount of text or the number of files."})
-
-
     allowed_extensions = (".docx", ".pdf")
     files = request.files.getlist("files[]")
 

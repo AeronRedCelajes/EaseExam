@@ -10,7 +10,7 @@ import logging
 app = Flask(__name__) # This line creates a Flask application instance called app.
 
 # Set your OpenAI API key
-openai.api_key = "OpenAPI Key"
+openai.api_key = "Open API Key"
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

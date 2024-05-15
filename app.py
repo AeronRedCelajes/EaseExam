@@ -60,8 +60,6 @@ def generate_quiz():
     if total_tokens > 16385:
         return jsonify({"error": f"You have exceeded the maximum token limit of 16385 with {total_tokens} tokens. Please reduce the amount of text or the number of files."})
 
-    # Initializes a list of messages with a system message.
-    messages = [{"role": "system", "content": "You are a student."}]
 
     allowed_extensions = (".docx", ".pdf")
     files = request.files.getlist("files[]")
@@ -87,6 +85,9 @@ def generate_quiz():
     # Check if combined_text is meaningful
     if not is_meaningful_text(combined_text):
         return jsonify({"error": "Please input meaningful text."})
+
+    # Initializes a list of messages with a system message.
+    messages = [{"role": "system", "content": ""}]
 
     if quiz_type == "Multiple Choice":
         messages.append({"role": "user", "content": combined_text})

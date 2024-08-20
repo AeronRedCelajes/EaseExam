@@ -9,7 +9,7 @@
 <br>
 
 ## EASE EXAM DEPLOYMENT
-Link: [bit.ly/EaseExam](bit.ly/EaseExam)
+Link: [bit.ly/EaseExam](https://easeexamchatbot.pythonanywhere.com)
 
 <br>
 
